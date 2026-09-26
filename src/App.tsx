@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { siteContent } from './content/siteContent';
 import { Header } from './components/Header';
 import { AuthorizationDisclaimer } from './components/AuthorizationDisclaimer';
@@ -11,15 +11,65 @@ import { ExampleCommands } from './components/ExampleCommands';
 import { ContributingSection } from './components/ContributingSection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { DocsLayout } from './components/docs/DocsLayout';
 
 export const App: React.FC = () => {
+  const [currentPath, setCurrentPath] = useState<string>(() => window.location.pathname);
+
+  // Sync state with browser forward/back buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Intercept internal routing links (e.g. /docs, /) for seamless SPA transitions
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a');
+      if (!target) return;
+
+      const href = target.getAttribute('href');
+      if (!href) return;
+
+      // Skip external links, hash anchors on the same page, or links with target="_blank"
+      if (
+        href.startsWith('http://') ||
+        href.startsWith('https://') ||
+        href.startsWith('//') ||
+        href.startsWith('mailto:') ||
+        target.getAttribute('target') === '_blank'
+      ) {
+        return;
+      }
+
+      // If clicking an internal route like /docs or /
+      if (href.startsWith('/docs') || href === '/') {
+        e.preventDefault();
+        if (window.location.pathname !== href) {
+          window.history.pushState({}, '', href);
+          setCurrentPath(window.location.pathname);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
+  // If visiting /docs or any /docs/* subpath, render the official Documentation experience
+  if (currentPath.startsWith('/docs')) {
+    return <DocsLayout />;
+  }
+
+  // Otherwise render the GoUpload Showcase Homepage
   return (
     <div className="min-h-screen bg-term-bg text-term-text flex flex-col font-mono selection:bg-term-cyan/20 selection:text-term-cyan-bright">
       {/* 1. Sticky Navigation Header */}
-      <Header
-  navLinks={siteContent.navigation}
-  repoUrl={siteContent.hero.repoUrl}
-/>
+      <Header navLinks={siteContent.navigation} repoUrl={siteContent.hero.repoUrl} />
 
       {/* 2. Prominent Authorization Disclaimer (Visible near top) */}
       <AuthorizationDisclaimer disclaimer={siteContent.disclaimer} />

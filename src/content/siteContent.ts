@@ -9,14 +9,15 @@ import { SiteContent } from '../types';
  */
 export const siteContent: SiteContent = {
   navigation: [
-    { label: 'Overview', href: '#overview' },
-    { label: 'Features', href: '#features' },
-    { label: 'Attack Modules', href: '#modules' },
-    { label: 'ML Roadmap', href: '#ml-roadmap', badge: 'Experimental' },
-    { label: 'Installation', href: '#install' },
-    { label: 'Examples', href: '#examples' },
-    { label: 'Contributing', href: '#contributing' },
-  ],
+  { label: 'Overview', href: '#overview' },
+  { label: 'Features', href: '#features' },
+  { label: 'Attack Modules', href: '#modules' },
+  { label: 'ML Roadmap', href: '#ml-roadmap', badge: 'Experimental' },
+  { label: 'Installation', href: '#install' },
+  { label: 'Examples', href: '#examples' },
+  { label: 'Docs', href: '/docs' },
+  { label: 'Contributing', href: '#contributing' },
+],
 
   hero: {
     toolName: 'GoUpload',
