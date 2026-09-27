@@ -4,10 +4,10 @@ A fast, static, terminal-aesthetic showcase website for **GoUpload**, the open-s
 
 ---
 
-## ⚡ Handoff Guide: How to Replace Placeholder Data
+## Handoff Guide: How to Replace Placeholder Data
 
 All textual content, links, metrics, and command examples are centralized in a single configuration file:
-👉 **[`src/content/siteContent.ts`](file:///c:/Users/hakim/OneDrive/Desktop/my%20projects/goupload-site/src/content/siteContent.ts)**
+ **[`src/content/siteContent.ts`](file:///c:/Users/hakim/OneDrive/Desktop/my%20projects/goupload-site/src/content/siteContent.ts)**
 
 You do **not** need to touch layout components or JSX to update the site. Simply open `src/content/siteContent.ts` and replace every `[PLACEHOLDER: ...]` string with your verified project data:
 
