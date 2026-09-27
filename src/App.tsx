@@ -12,6 +12,7 @@ import { ContributingSection } from './components/ContributingSection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { DocsLayout } from './components/docs/DocsLayout';
+import { Research } from './components/Research';
 
 export const App: React.FC = () => {
   const [currentPath, setCurrentPath] = useState<string>(() => window.location.pathname);
@@ -64,6 +65,10 @@ export const App: React.FC = () => {
   if (currentPath.startsWith('/docs')) {
     return <DocsLayout />;
   }
+
+  if (currentPath.startsWith('/research')) {
+  return <Research />;
+}
 
   // Otherwise render the GoUpload Showcase Homepage
   return (

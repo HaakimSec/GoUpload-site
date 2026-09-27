@@ -17,6 +17,7 @@ export const siteContent: SiteContent = {
   { label: 'Examples', href: '#examples' },
   { label: 'Docs', href: '/docs' },
   { label: 'Contributing', href: '#contributing' },
+  { label: 'Research', href: '/research' },
 ],
 
   hero: {
