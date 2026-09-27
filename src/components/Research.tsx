@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Calendar, Clock, ArrowLeft, Terminal } from 'lucide-react';
 import { researchArticles, ResearchBlock } from '../content/research/beyondExtensionChecks';
 
@@ -81,6 +81,54 @@ export const Research: React.FC = () => {
   // Currently renders the single published article. If more are added to
   // researchArticles, this can be extended to match against a slug parsed
   // from the URL (e.g. /research/<slug>) the same way DocsLayout does.
+    useEffect(() => {
+    const title =
+      'Beyond Extension Checks: A Multi-Layer Approach to Testing File Upload Security';
+
+    const description =
+      'A technical examination of the different security layers involved in file upload testing.';
+
+    const url = 'https://goupload.netlify.app/research';
+    const image = 'https://goupload.netlify.app/research-og-image.png';
+
+    document.title = title;
+
+    const setMeta = (
+      attribute: 'name' | 'property',
+      key: string,
+      content: string
+    ) => {
+      let element = document.head.querySelector(
+        `meta[${attribute}="${key}"]`
+      ) as HTMLMetaElement | null;
+
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attribute, key);
+        document.head.appendChild(element);
+      }
+
+      element.setAttribute('content', content);
+    };
+
+    setMeta('property', 'og:title', title);
+    setMeta('property', 'og:description', description);
+    setMeta('property', 'og:url', url);
+    setMeta('property', 'og:type', 'article');
+    setMeta('property', 'og:image', image);
+    setMeta('property', 'og:image:width', '1200');
+    setMeta('property', 'og:image:height', '630');
+
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:title', title);
+    setMeta('name', 'twitter:description', description);
+    setMeta('name', 'twitter:image', image);
+
+    return () => {
+      document.title =
+        'GoUpload — Web Application File Upload Security Tester';
+    };
+  }, []);
   const article = researchArticles[0];
 
   if (!article) {
