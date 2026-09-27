@@ -26,18 +26,18 @@ function renderBlock(block: ResearchBlock, i: number) {
         </p>
       );
     case 'quote':
-      return (
-        <blockquote
-          key={i}
-          className={`my-5 border-l-2 pl-4 py-1 font-mono text-sm sm:text-base leading-relaxed ${
-            block.emphasis
-              ? 'border-term-cyan text-term-cyan-bright font-semibold'
-              : 'border-term-border text-term-muted italic'
-          }`}
-        >
-          {block.text}
-        </blockquote>
-      );
+  return (
+    <blockquote
+      key={i}
+      className={`my-5 border-l-2 pl-4 py-1 font-mono text-sm sm:text-base leading-relaxed ${
+        block.emphasis
+          ? 'border-term-border text-white font-semibold'
+          : 'border-term-border text-term-muted italic'
+      }`}
+    >
+      {block.text}
+    </blockquote>
+  );
     case 'list':
       return (
         <ul key={i} className="mb-4 space-y-1.5 pl-1">
