@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://goupload.netlify.app/</loc>
+  </url>
+
+  <!-- Getting Started -->
+  <url>
+    <loc>https://goupload.netlify.app/docs/introduction</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/installation</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/quick-start</loc>
+  </url>
+
+  <!-- Scanning & Modules -->
+  <url>
+    <loc>https://goupload.netlify.app/docs/workflow</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules</loc>
+  </url>
+
+  <!-- Individual attack modules -->
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/extension</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/content-type</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/magic-byte</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/filename</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/path-traversal</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/graphql</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/unicode</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/size-boundary</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/race-condition</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/polyglot</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/xxe</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/server-config</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/modules/template</loc>
+  </url>
+
+  <!-- Results & CLI -->
+  <url>
+    <loc>https://goupload.netlify.app/docs/results</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/cli</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/templates</loc>
+  </url>
+
+  <!-- Development -->
+  <url>
+    <loc>https://goupload.netlify.app/docs/architecture</loc>
+  </url>
+  <url>
+    <loc>https://goupload.netlify.app/docs/contributing</loc>
+  </url>
+
+  <!-- Reference -->
+  <url>
+    <loc>https://goupload.netlify.app/docs/known-issues</loc>
+  </url>
+
+</urlset>
