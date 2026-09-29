@@ -14,14 +14,22 @@ import { Footer } from './components/Footer';
 import { DocsLayout } from './components/docs/DocsLayout';
 import { Research } from './components/Research';
 
-export const App: React.FC = () => {
-  const [currentPath, setCurrentPath] = useState<string>(() => window.location.pathname);
+const BASE = import.meta.env.BASE_URL; // e.g. '/GoUpload-site/'
 
-  // Sync state with browser forward/back buttons
-  useEffect(() => {
-    const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
-    };
+function stripBase(pathname: string): string {
+  if (BASE !== '/' && pathname.startsWith(BASE)) {
+    return '/' + pathname.slice(BASE.length);
+  }
+  return pathname;
+}
+
+export const App: React.FC = () => {
+  const [currentPath, setCurrentPath] = useState<string>(() => stripBase(window.location.pathname));
+
+useEffect(() => {
+  const handlePopState = () => {
+    setCurrentPath(stripBase(window.location.pathname));
+  };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
@@ -46,12 +54,13 @@ export const App: React.FC = () => {
         return;
       }
 
-      // If clicking an internal route like /docs or /
-      if (href.startsWith('/docs') || href === '/') {
+      // If clicking an internal route like /docs, /research, or /
+      if (href.startsWith('/docs') || href.startsWith('/research') || href === '/') {
         e.preventDefault();
-        if (window.location.pathname !== href) {
-          window.history.pushState({}, '', href);
-          setCurrentPath(window.location.pathname);
+        const fullPath = BASE === '/' ? href : BASE.replace(/\/$/, '') + href;
+        if (stripBase(window.location.pathname) !== href) {
+          window.history.pushState({}, '', fullPath);
+          setCurrentPath(href);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       }
