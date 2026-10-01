@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+require('@tailwindcss/typography')
 export default {
   content: [
     "./index.html",

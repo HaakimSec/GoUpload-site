@@ -59,10 +59,16 @@ const ALL_DOC_ROUTES = [
 
 export const DocsLayout: React.FC = () => {
   // Normalize current subpath (e.g. 'modules/path-traversal' or 'introduction')
-  const normalizePath = () => {
-    const raw = window.location.pathname.replace(/^\/docs\/?/, '').split('#')[0];
-    return raw || 'introduction';
-  };
+  const BASE = import.meta.env.BASE_URL; 
+
+const normalizePath = () => {
+  let pathname = window.location.pathname;
+  if (BASE !== '/' && pathname.startsWith(BASE)) {
+    pathname = '/' + pathname.slice(BASE.length);
+  }
+  const raw = pathname.replace(/^\/docs\/?/, '').split('#')[0];
+  return raw || 'introduction';
+};
 
   const [currentPath, setCurrentPath] = useState<string>(normalizePath);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -79,13 +85,22 @@ export const DocsLayout: React.FC = () => {
   }, []);
 
   // Programmatic client-side navigation
-  const navigateTo = (href: string) => {
-    window.history.pushState({}, '', href);
-    const targetPath = href.replace(/^\/docs\/?/, '').split('#')[0] || 'introduction';
-    setCurrentPath(targetPath);
-    setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+const navigateTo = (href: string) => {
+  const [path, hash] = href.split('#');
+
+  const targetPath =
+    path.replace(/^\/docs\/?/, '').replace(/^\/+/, '') || 'introduction';
+
+  const fullHref =
+    BASE === '/'
+      ? href
+      : `${BASE.replace(/\/$/, '')}${path}${hash ? `#${hash}` : ''}`;
+
+  window.history.pushState({}, '', fullHref);
+
+  setCurrentPath(targetPath);
+  setMobileMenuOpen(false);
+};
 
   // Resolve module or page
   const isModuleRoute = currentPath.startsWith('modules/');
@@ -504,7 +519,7 @@ export const DocsLayout: React.FC = () => {
               href="/"
               onClick={(e) => {
                 e.preventDefault();
-                window.history.pushState({}, '', '/');
+                window.history.pushState({}, '', BASE);
                 window.dispatchEvent(new PopStateEvent('popstate'));
               }}
               className="flex items-center gap-2.5 text-sm font-bold text-white group"
@@ -526,7 +541,7 @@ export const DocsLayout: React.FC = () => {
                 href="/"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.history.pushState({}, '', '/');
+                  window.history.pushState({}, '', BASE);
                   window.dispatchEvent(new PopStateEvent('popstate'));
                 }}
                 className="text-term-muted hover:text-term-cyan transition-colors"

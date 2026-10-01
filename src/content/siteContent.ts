@@ -1,12 +1,5 @@
 import { SiteContent } from '../types';
 
-/**
- * GoUpload Showcase Website Content Configuration
- *
- * ALL content is centralized in this file. To update the website with verified
- * project data, simply edit the values below. Layout and presentation components
- * read directly from this configuration.
- */
 export const siteContent: SiteContent = {
   navigation: [
   { label: 'Overview', href: '#overview' },
@@ -18,6 +11,7 @@ export const siteContent: SiteContent = {
   { label: 'Docs', href: '/docs' },
   { label: 'Contributing', href: '#contributing' },
   { label: 'Research', href: '/research' },
+  { label: 'Blog', href: '/blog' }
 ],
 
   hero: {

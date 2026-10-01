@@ -13,8 +13,9 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { DocsLayout } from './components/docs/DocsLayout';
 import { Research } from './components/Research';
+import { Blog } from './components/Blog';
 
-const BASE = import.meta.env.BASE_URL; // e.g. '/GoUpload-site/'
+const BASE = import.meta.env.BASE_URL;
 
 function stripBase(pathname: string): string {
   if (BASE !== '/' && pathname.startsWith(BASE)) {
@@ -34,7 +35,6 @@ useEffect(() => {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Intercept internal routing links (e.g. /docs, /) for seamless SPA transitions
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest('a');
@@ -70,7 +70,6 @@ useEffect(() => {
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
-  // If visiting /docs or any /docs/* subpath, render the official Documentation experience
   if (currentPath.startsWith('/docs')) {
     return <DocsLayout />;
   }
@@ -79,7 +78,12 @@ useEffect(() => {
   return <Research />;
 }
 
-  // Otherwise render the GoUpload Showcase Homepage
+
+if (currentPath.startsWith('/blog')) {
+  const slug = currentPath.replace(/^\/blog\/?/, '') || undefined;
+  return <Blog slug={slug} />;
+}
+
   return (
     <div className="min-h-screen bg-term-bg text-term-text flex flex-col font-mono selection:bg-term-cyan/20 selection:text-term-cyan-bright">
       {/* 1. Sticky Navigation Header */}
