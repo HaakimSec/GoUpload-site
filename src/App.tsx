@@ -54,8 +54,7 @@ useEffect(() => {
         return;
       }
 
-      // If clicking an internal route like /docs, /research, or /
-      if (href.startsWith('/docs') || href.startsWith('/research') || href === '/') {
+      if (href.startsWith('/docs') || href.startsWith('/research') || href.startsWith('/blog') || href === '/') {
         e.preventDefault();
         const fullPath = BASE === '/' ? href : BASE.replace(/\/$/, '') + href;
         if (stripBase(window.location.pathname) !== href) {
