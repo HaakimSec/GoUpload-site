@@ -2,91 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://goupload.netlify.app/</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/</loc>
   </url>
 
   <!-- Getting Started -->
   <url>
-    <loc>https://goupload.netlify.app/docs/introduction</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/introduction</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/installation</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/installation</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/quick-start</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/quick-start</loc>
   </url>
 
   <!-- Scanning & Modules -->
   <url>
-    <loc>https://goupload.netlify.app/docs/workflow</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/workflow</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules</loc>
   </url>
 
   <!-- Individual attack modules -->
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/extension</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/extension</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/content-type</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/content-type</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/magic-byte</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/magic-byte</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/filename</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/filename</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/path-traversal</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/path-traversal</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/graphql</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/graphql</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/unicode</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/unicode</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/size-boundary</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/size-boundary</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/race-condition</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/race-condition</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/polyglot</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/polyglot</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/xxe</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/xxe</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/server-config</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/server-config</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/modules/template</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/modules/template</loc>
   </url>
 
   <!-- Results & CLI -->
   <url>
-    <loc>https://goupload.netlify.app/docs/results</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/results</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/cli</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/cli</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/templates</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/templates</loc>
   </url>
 
   <!-- Development -->
   <url>
-    <loc>https://goupload.netlify.app/docs/architecture</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/architecture</loc>
   </url>
   <url>
-    <loc>https://goupload.netlify.app/docs/contributing</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/contributing</loc>
   </url>
 
   <!-- Reference -->
   <url>
-    <loc>https://goupload.netlify.app/docs/known-issues</loc>
+    <loc>https://haakimsec.github.io/GoUpload-site/docs/known-issues</loc>
   </url>
 
 </urlset>

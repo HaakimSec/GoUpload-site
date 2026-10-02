@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://goupload.netlify.app/sitemap.xml
+Sitemap: https://haakimsec.github.io/GoUpload-site/sitemap.xml
